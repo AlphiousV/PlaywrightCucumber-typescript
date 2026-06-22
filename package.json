@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:cucumber": "npx cucumber-js src/features/**/*.feature --config config/cucumber.js",
-    "build": "tsc"
-  },
+  "test:cucumber": "cross-env PWDEBUG=0 cucumber-js src/features/**/*.feature --config config/cucumber.js",
+  "build": "tsc"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -16,6 +16,7 @@
     "@playwright/test": "^1.61.0",
     "@types/node": "^25.9.4",
     "@types/winston": "^2.4.4",
+    "cross-env": "^10.1.0",
     "multiple-cucumber-html-reporter": "^3.10.0",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3"
