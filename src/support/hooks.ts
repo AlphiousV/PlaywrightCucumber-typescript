@@ -12,11 +12,10 @@ BeforeAll(async function () {
 
     Browser = await chromium.launch({
         headless:true,
-        slowMo:5000
-
-
-    
+       // slowMo:5000
     });
+
+      console.log("browser lauched Sucessfully");
 })
 
 Before(async function (this:customWorld) {
@@ -25,7 +24,7 @@ Before(async function (this:customWorld) {
     this.Page = await this.Context.newPage();
     this.Page.setDefaultTimeout(15*1000)
     this.Page.setDefaultNavigationTimeout(1000*10);
-    
+      console.log("Before executed Sucessfully");
 })
 
 After(async function(this:customWorld) {
