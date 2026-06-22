@@ -12,7 +12,7 @@ BeforeAll(async function () {
 
     Browser = await chromium.launch({
         headless:true,
-       // slowMo:5000
+        slowMo:5000
     });
 
       console.log("browser lauched Sucessfully");
