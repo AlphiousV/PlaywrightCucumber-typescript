@@ -5,7 +5,6 @@ node_modules/
 /test-result/
 /test-results/
 cucumber-report.html
-assets
-features
+assetss
 @rerun.txt
 index.html
