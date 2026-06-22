@@ -32,6 +32,9 @@ jobs:
         run: npm run build
         if: success()
 
+      - name: List Feature Files
+        run: find . -name "*.feature"
+
       - name: Run Cucumber Playwright Tests
         run: npm run test:cucumber
 

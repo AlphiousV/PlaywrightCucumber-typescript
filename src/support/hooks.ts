@@ -8,6 +8,8 @@ dotenv.config(); // Loads the variables into process.env
 let Browser:Browser;
 
 BeforeAll(async function () {
+       console.log("BeforeAll Started");
+
     Browser = await chromium.launch({
         headless:true,
         slowMo:5000
@@ -18,6 +20,7 @@ BeforeAll(async function () {
 })
 
 Before(async function (this:customWorld) {
+       console.log("Before Started");
      this.Context = await Browser.newContext();
     this.Page = await this.Context.newPage();
     this.Page.setDefaultTimeout(15*1000)
@@ -26,10 +29,12 @@ Before(async function (this:customWorld) {
 })
 
 After(async function(this:customWorld) {
+       console.log("After Started");
     await this.Page.close();
     await this.Context?.close();
 })
 
 AfterAll(async function() {
+     console.log("AfterAll Started");
     await Browser.close();
 })
