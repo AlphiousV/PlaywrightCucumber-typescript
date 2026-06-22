@@ -14,7 +14,7 @@ class BasePage{
     async navigateTo(endpoint: string):Promise<void>{
          const fullUrl = `${this.baseUrl}${endpoint}`;
         logger.info(`Navigating to URL: ${fullUrl}`);
-        await this.page.goto(fullUrl,{waitUntil:'networkidle'});
+        await this.page.goto(fullUrl,{waitUntil:"domcontentloaded"});
         
     }
 
