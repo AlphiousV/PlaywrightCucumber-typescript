@@ -23,7 +23,7 @@ Before(async function (this:customWorld) {
      this.Context = await Browser.newContext();
     this.Page = await this.Context.newPage();
     this.Page.setDefaultTimeout(15*1000)
-    this.Page.setDefaultNavigationTimeout(1000*10);
+    this.Page.setDefaultNavigationTimeout(1000*30);
       console.log("Before executed Sucessfully");
 })
 
