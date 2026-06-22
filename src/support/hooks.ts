@@ -9,7 +9,7 @@ let Browser:Browser;
 
 BeforeAll(async function () {
     Browser = await chromium.launch({
-        headless:false,
+        headless:true,
         slowMo:5000
 
 
