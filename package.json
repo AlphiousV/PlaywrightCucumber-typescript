@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "test:cucumber": "cross-env PWDEBUG=0 cucumber-js src/features/**/*.feature --config config/cucumber.js",
+  "test:cucumber": "cucumber-js src/features/**/*.feature --config config/cucumber.js",
   "build": "tsc"
 },
   "keywords": [],

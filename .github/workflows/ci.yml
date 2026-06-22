@@ -33,9 +33,7 @@ jobs:
         if: success()
 
       - name: Run Cucumber Playwright Tests
-        run: |
-               unset PWDEBUG || true
-               npm run test:cucumber
+        run: npm run test:cucumber
 
       - name: Upload Cucumber Report (if generated)
         if: ${{ !cancelled() }}
