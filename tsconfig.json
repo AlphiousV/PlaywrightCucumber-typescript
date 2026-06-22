@@ -1,8 +1,9 @@
+// tsconfig.json
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "CommonJS",        // ← change
+    "moduleResolution": "Node",  // ← change
     "esModuleInterop": true,
     "strict": true,
     "skipLibCheck": true,
@@ -10,7 +11,5 @@
     "outDir": "./dist",
     "rootDir": "./src"
   },
-  "include": [
-    "src/**/*"
-      ]
+  "include": ["src/**/*"]
 }
