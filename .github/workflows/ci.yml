@@ -25,7 +25,7 @@ jobs:
         run: npm ci
 
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+        run: npx playwright install --with-deps chromium
 
       # Optional: if you compile TS before running tests
       - name: Build TypeScript (if needed)
