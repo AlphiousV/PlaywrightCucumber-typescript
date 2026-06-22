@@ -12,7 +12,8 @@ BeforeAll(async function () {
 
     Browser = await chromium.launch({
         headless:true,
-        slowMo:5000
+        slowMo:5000,
+         args: ['--no-sandbox', '--disable-dev-shm-usage']
     });
 
       console.log("browser lauched Sucessfully");
