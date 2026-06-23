@@ -10,7 +10,7 @@ setDefaultTimeout(60 * 1000 * 2);
 Given('User navigates to the registration page', async function (this: customWorld) {
   this.RegisterPage = new RegisterPage(this.Page);
   await this.RegisterPage.navigateTo(this.RegisterPage.url);
-  await expect(this.RegisterPage.RegisterTitle).toBeVisible({ timeout: 15000 });
+  await expect(this.RegisterPage.RegisterTitle).toBeVisible();
   logger.info('>>> Registration page loaded successfully');
 });
 

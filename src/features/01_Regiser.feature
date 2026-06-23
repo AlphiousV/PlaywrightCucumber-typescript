@@ -12,7 +12,7 @@ Scenario: Register a new user with valid details
     | Postal         | 600001            |
     | HouseNumber    | 121               |
     | Phone          | 9876543210        |
-    | Email          | john2001@test.com  |
+    | Email          | john2002@test.com  |
     | Password       | John01@123          |
   And User clicks Register buttons
   Then Registration should be successful
