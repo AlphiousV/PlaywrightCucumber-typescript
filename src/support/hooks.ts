@@ -13,7 +13,7 @@ BeforeAll(async function () {
        console.log("BeforeAll Started");
 
     Browser = await chromium.launch({
-        headless:false,
+        headless:true,
         slowMo:5000,
          args: isCI ? [
       '--no-sandbox',
