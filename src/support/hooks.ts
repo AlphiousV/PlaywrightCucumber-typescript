@@ -18,7 +18,7 @@ BeforeAll(async function () {
          args: isCI ? [
       '--no-sandbox',
       '--disable-dev-shm-usage',
-      '--disable-gpu',
+      '--disable-blink-features=AutomationControlled',
     ] : [],
     });
 
@@ -26,8 +26,22 @@ BeforeAll(async function () {
 })
 
 Before(async function (this:customWorld) {
-       console.log("Before Started");
-     this.Context = await Browser.newContext();
+      console.log("Before Started");
+                  // Inside your Before hook setup (usually where page and context are instantiated)
+      this.Context = await Browser.newContext({
+                   // 1. Emulate a standard Windows Desktop Chrome user agent
+      userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+    
+                  // 2. Set a real window size (headless defaults to 0x0 or 800x600, which triggers blocks)
+      viewport: { width: 1280, height: 720 },
+    
+                   // 3. Set standard locale details so the browser doesn't look empty
+      locale: 'en-US',
+      timezoneId: 'America/New_York',
+      extraHTTPHeaders: {
+        'Accept-Language': 'en-US,en;q=0.9',
+                 }
+      });
     this.Page = await this.Context.newPage();
     this.Page.setDefaultTimeout(90*1000)
     this.Page.setDefaultNavigationTimeout(1000*30);
