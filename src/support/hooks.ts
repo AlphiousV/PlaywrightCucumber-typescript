@@ -31,7 +31,7 @@ Before(async function (this:customWorld) {
     this.Page = await this.Context.newPage();
     this.Page.setDefaultTimeout(90*1000)
     this.Page.setDefaultNavigationTimeout(1000*30);
-      console.log("Before executed Sucessfully");
+      console.log("Before executed Sucessfully!");
 })
 
 After(async function(this:customWorld) {
