@@ -15,10 +15,7 @@ class BasePage{
          const fullUrl = `${this.baseUrl}${endpoint}`;
         logger.info(`Navigating to URL: ${fullUrl}`);
         await this.page.goto(fullUrl,{waitUntil:"domcontentloaded"});
-        await this.page.screenshot({
-    path: "test-results/register-page.png",
-    fullPage: true
-});
+      
         
     }
 
