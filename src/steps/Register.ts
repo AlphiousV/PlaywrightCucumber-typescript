@@ -14,12 +14,23 @@ Given('User navigates to the registration page', async function (this: customWor
   logger.info('>>> Registration page loaded successfully');
 });
 
+//03_Register.feature
+When('User enters valid registration details:', async function (this: customWorld, dataTable: DataTable) {
+  logger.info('>>> STEP: Entering registration details'); 
+  const rows = dataTable.hashes();
+  const data = rows[0];
+  logger.info(`>>> Test data: ${JSON.stringify(data)}`); // ← see data in terminal
+  await this.RegisterPage.RegisterNewUser(data.FirstName,data.LastName,data.DOB,data.Country,data.Postal,data.HouseNumber,data.Phone,data.Email,data.Password)
+});
+
+
 When('User enters valid registration details', async function (this: customWorld, dataTable: DataTable) {
   logger.info('>>> STEP: Entering registration details'); 
   const data = dataTable.rowsHash();
   logger.info(`>>> Test data: ${JSON.stringify(data)}`); // ← see data in terminal
   await this.RegisterPage.RegisterNewUser(data.FirstName,data.LastName,data.DOB,data.Country,data.Postal,data.HouseNumber,data.Phone,data.Email,data.Password)
 });
+
 
 When('User clicks Register buttons', async function (this: customWorld) {
   logger.info('>>> STEP: Clicking register button'); // ← was missing this:customWorld
