@@ -3,6 +3,7 @@ name: Playwright Cucumber Tests
 on:
   push:
     branches: [ main, master ]
+  workflow_dispatch:
   pull_request:
     branches: [ main, master ]
 
